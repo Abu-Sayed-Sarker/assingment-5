@@ -31,7 +31,7 @@ const historyBtn = document.getElementById('historu-btn');
 const historySection = document.getElementById('history-section');
 const donationSection = document.getElementById('donation-section');
 const donateBalancce = document.getElementById('donate-blance1');
-const mainBlanceEl = parseFloat(document.getElementById('mainBlanceIs').innerText);;
+const mainBlanceEl = parseFloat(document.getElementById('mainBlanceIs').innerText);
 const historyTeextChange = document.getElementById('histry-text');
 console.log(mainBlanceEl);
 
