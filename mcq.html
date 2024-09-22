@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navColor: 'rgb(249, 247, 243)',
+                        btnpramary: 'rgb(180, 244, 97)',
+                        Bdtbtn: 'rgba(17, 17, 17, 0.05)',
+                        coineClor: 'rgba(17, 17, 17, 0.7)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- this is nav section  -->
+    <div class="bg-navColor sticky">
+        <div class="navbar lg:w-11/12 mx-auto">
+            <div class="navbar-start">
+                <button id="blo2btn"
+                    class="lg:px-9 px-5 py-2 lg:py-3 bg-btnpramary rounded-lg lg:text-xl text-base font-semibold">Blog</button>
+            </div>
+            <div class="navbar-center">
+                <div class="flex flex-row items-center lg:gap-4 gap-1">
+                    <img class="lg:h-12 h-8 lg:w-12 w-8" src="./assets/logo.png" alt="">
+                    <h1 class="lg:block hidden lg:text-xl text-sm font-semibold">Donate Bangladesh</h1>
+                    <h1 class="lg:hidden block lg:text-xl text-sm font-semibold">Donate BD</h1>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="flex flex-row items-center lg:gap-4 gap-1">
+                    <img class="w-7 h-7" src="./assets/coin.png" alt="">
+                    <p class="text-coineClor lg:text-xl text-base"><span id="mainBlanceIs">5000</span>BDT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- mcq section  -->
+
+    <div class="lg:w-11/12 mx-auto flex flex-col gap-6 mt-24">
+
+
+        <!-- card 1 -->
+
+        <div tabindex="0" class="collapse bg-base-200">
+            <div class="collapse-title text-xl font-medium">Focus me to see content</div>
+            <div class="collapse-content">
+                <p>tabindex="0" attribute is necessary to make the div focusable</p>
+            </div>
+        </div>
+
+        <!-- card 2 -->
+
+        <div tabindex="0" class="collapse bg-base-200">
+            <div class="collapse-title text-xl font-medium">Focus me to see content</div>
+            <div class="collapse-content">
+                <p>tabindex="0" attribute is necessary to make the div focusable</p>
+            </div>
+        </div>
+
+        <!-- card 3 -->
+
+        <div tabindex="0" class="collapse bg-base-200">
+            <div class="collapse-title text-xl font-medium">Focus me to see content</div>
+            <div class="collapse-content">
+                <p>tabindex="0" attribute is necessary to make the div focusable</p>
+            </div>
+        </div>
+
+        <!-- card 4 -->
+
+        <div tabindex="0" class="collapse bg-base-200">
+            <div class="collapse-title text-xl font-medium">Focus me to see content</div>
+            <div class="collapse-content">
+                <p>tabindex="0" attribute is necessary to make the div focusable</p>
+            </div>
+        </div>
+    </div>
+    <script>document.getElementById('blo2btn').addEventListener('click', function () {
+            window.location.href = 'index.html';
+        })
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
