@@ -24,16 +24,14 @@ document.getElementById('blogeBTn').addEventListener('click', function () {
 // main code 
 
 
-console.log('abu sayed');
-
 const donationBtn = document.getElementById('Donation-btn');
 const historyBtn = document.getElementById('historu-btn');
 const historySection = document.getElementById('history-section');
 const donationSection = document.getElementById('donation-section');
 const donateBalancce = document.getElementById('donate-blance1');
-const mainBlanceEl = parseFloat(document.getElementById('mainBlanceIs').innerText);
+let mainBlanceEl = parseFloat(document.getElementById('mainBlanceIs').innerText);
 const historyTeextChange = document.getElementById('histry-text');
-console.log(mainBlanceEl);
+
 
 let currentTime = new Date();
 const WeekIntext = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -51,14 +49,14 @@ document.getElementById('donate-btn1').addEventListener('click', function () {
     const inputvalue1 = parseFloat(document.getElementById('donateB1').value);
     if (inputvalue1 <= 0 || mainBlanceEl < inputvalue1 || isNaN(inputvalue1)) {
         alert("Your amount in Invalid");
+        return;
 
     }
     else {
         const cardBlan3 = parseFloat(document.getElementById('card-blance1').innerText);
         const sum = donateSum(inputvalue1, cardBlan3);
         document.getElementById('card-blance1').innerText = sum;
-        const divide = mainBlance(inputvalue1, mainBlanceEl);
-        document.getElementById('mainBlanceIs').innerText = divide;
+        document.getElementById('mainBlanceIs').innerText -= inputvalue1;
 
 
 
@@ -72,7 +70,7 @@ document.getElementById('donate-btn1').addEventListener('click', function () {
         historyTeextChange.innerHTML += `
         <div class="border rounded-lg">
 
-            
+
                 <h1 class="text-xl font-bold mb-4  px-8 pt-8">${inputvalue1} Taka is Donated for ${h1Is}</h1>
                 <p class="text-sm font-light  p-8 pt-0">Date: ${dayTextR} ${monthInR} ${currentTime.getDate()} ${currentTime.getFullYear()} ${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()} GMT +0600 (Bangladesh Standard Time)</p></div>
     `
@@ -103,8 +101,7 @@ document.getElementById('donate-btn2').addEventListener('click', function () {
         const cardBlan3 = parseFloat(document.getElementById('card-blance2').innerText);
         const sum = donateSum(inputvalue, cardBlan3);
         document.getElementById('card-blance2').innerText = sum;
-        const divide = mainBlance(inputvalue, mainBlanceEl);
-        document.getElementById('mainBlanceIs').innerText = divide;
+        document.getElementById('mainBlanceIs').innerText -= inputvalue;
 
 
         const corruntDay = currentTime.getDay();
@@ -138,17 +135,16 @@ document.getElementById('donate-btn2').addEventListener('click', function () {
 
 
 document.getElementById('donate-btn').addEventListener('click', function () {
-    const inputvalue = parseFloat(document.getElementById('donateB3').value);
-    if (inputvalue <= 0 || mainBlanceEl < inputvalue || isNaN(inputvalue)) {
+    const inputvalue3 = parseFloat(document.getElementById('donateB3').value);
+    if (inputvalue3 <= 0 || mainBlanceEl < inputvalue3 || isNaN(inputvalue3)) {
         alert("Your amount in Invalid");
 
     }
     else {
         const cardBlan3 = parseFloat(document.getElementById('card-blance3').innerText);
-        const sum = donateSum(inputvalue, cardBlan3);
+        const sum = donateSum(inputvalue3, cardBlan3);
         document.getElementById('card-blance3').innerText = sum;
-        const divide = mainBlance(inputvalue, mainBlanceEl);
-        document.getElementById('mainBlanceIs').innerText = divide;
+        document.getElementById('mainBlanceIs').innerText -= inputvalue3;
 
         const corruntDay = currentTime.getDay();
         const dayTextR = WeekIntext[corruntDay];
@@ -161,12 +157,13 @@ document.getElementById('donate-btn').addEventListener('click', function () {
         <div class="border rounded-lg">
 
             
-                <h1 class="text-xl font-bold mb-4  px-8 pt-8">${inputvalue} Taka is Donated for ${h1Is}</h1>
+                <h1 class="text-xl font-bold mb-4  px-8 pt-8">${inputvalue3} Taka is Donated for ${h1Is}</h1>
                 <p class="text-sm font-light  p-8 pt-0">Date: ${dayTextR} ${monthInR} ${currentTime.getDate()} ${currentTime.getFullYear()} ${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()} GMT +0600 (Bangladesh Standard Time)</p></div>
     `
 
 
         document.getElementById('donateB3').value = '';
+
         document.getElementById('donate-btn').addEventListener(onclick = my_modal_5.show());
     }
 
@@ -204,4 +201,5 @@ donationBtn.addEventListener('click', function () {
 
 
 
+console.log('AAAAA');
 
